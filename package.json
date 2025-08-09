@@ -1,0 +1,99 @@
+{
+  "name": "@twg-group/container-manager-client",
+  "version": "1.0.0",
+  "description": "Container manager client",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepublish": "pnpm build",
+    "build": "rimraf dist && tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint \"src/**/*.ts\" --max-warnings 0",
+    "lint:fix": "eslint \"src/**/*.ts\" --fix",
+    "test": "jest --verbose",
+    "test:cov": "jest --coverage"
+  },
+  "keywords": [
+    "nestjs",
+    "container-manager",
+    "client"
+  ],
+  "author": "Matvey Alekseev",
+  "license": "MIT",
+  "dependencies": {
+    "@twg-group/container-manager": "^1.0.1",
+    "axios": "^1.11.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.33.0",
+    "@swc/cli": "^0.6.0",
+    "@swc/core": "^1.13.3",
+    "@types/express": "^5.0.3",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.17.1",
+    "@types/supertest": "^6.0.3",
+    "eslint": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.3.0",
+    "jest": "^30.0.5",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
+    "source-map-support": "^0.5.21",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.1",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.39.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "glob@7.x": "8.1.0",
+      "test-exclude@6.x": "^7.0.0",
+      "babel-plugin-istanbul@6.x": "^7.0.0"
+    },
+    "ignoredBuiltDependencies": [
+      "cpu-features",
+      "protobufjs",
+      "ssh2",
+      "unrs-resolver"
+    ],
+    "onlyBuiltDependencies": [
+      "@nestjs/core",
+      "@swc/core"
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twg-group/nestjs-logger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/twg-group/nestjs-logger/issues"
+  },
+  "files": [
+    "dist/**/!(*.spec|*.e2e-spec|*.fixture).{js,d.ts}",
+    "README.md"
+  ]
+}
