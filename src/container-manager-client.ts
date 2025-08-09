@@ -2,7 +2,7 @@ import axios, { AxiosInstance } from 'axios';
 import { plainToInstance } from 'class-transformer';
 import {DeployConfigDto, InfoDto, ListFilterDto, LogDto} from "@twg-group/container-manager";
 
-export class ContainerClient {
+export class ContainerManagerClient {
     private readonly http: AxiosInstance;
 
     constructor(
